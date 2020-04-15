@@ -1,0 +1,8 @@
+<span> {{object.title}} </span>
+
+
+<div>
+    <img src = "http://{{ request.META.HTTP_HOST }}/{{post.image.url}}">
+
+    <a href= "{% url 'post_edit' object.pk %}"> Edit Post </a>
+</div> 
