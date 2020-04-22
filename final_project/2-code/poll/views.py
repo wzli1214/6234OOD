@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from .models import Question, Choice
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 # 首页展示所有问题
@@ -48,3 +49,9 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('poll:results', args=(p.id,)))
+
+
+class PollCreateView(CreateView):
+    model = Question
+    template_name = 'poll/make_poll.html'
+    fields = '__all__' 

@@ -1,3 +1,20 @@
+<header>
+    <div>
+        <!-- <li>
+            <a href="{% url 'poll:newpoll' %}"> Set up a new poll </a>
+        </li> -->
+
+        <li>
+            <a href="/admin/poll/question/add/"> Set up a new poll </a>
+        </li>
+
+        <li>
+            <a href="/admin/poll/question/"> Edit the poll </a>
+        </li>
+
+    </div>
+</header>
+
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -7,3 +24,7 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+
+
+ 
